@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEH - Thoyajaksh's Engineering Hub</title>
+<meta name="description" content="Engineering Hub: year-wise and branch-wise notes, syllabus, PYQs, lab manuals, books, videos and thoEdge Picks.">
+<meta name="theme-color" content="#06090a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2306090a'/%3E%3Ctext x='32' y='42' font-size='26' font-weight='bold' text-anchor='middle' fill='%2310b981' font-family='Arial'%3ETEH%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TEH - Thoyajaksh's Engineering Hub">
+<meta property="og:description" content="Notes, syllabus, PYQs, labs and thoEdge Picks for every engineering year and branch.">
+<meta property="og:image" content="logo.png"><!-- replace with the full https:// link of your logo -->
+<style>
+:root{--bg:#06090a;--text:#ececf3;--muted:#b0b0c4;--line:rgba(255,255,255,.16);--acc:#10b981;--acc2:#00d4ff;--green:#00ff9d}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:radial-gradient(circle at 15% 0%,rgba(16,185,129,.12),transparent 40%),radial-gradient(circle at 90% 20%,rgba(0,212,255,.07),transparent 35%),var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:-1}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+a{color:inherit}
+
+header{position:sticky;top:0;z-index:100;background:rgba(6,9,10,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:transform .3s}
+header.hidden{transform:translateY(-110%)}
+.nav{max-width:1200px;margin:auto;padding:12px 20px;min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px;position:relative}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
+.brand img{width:48px;height:48px;object-fit:contain;border-radius:12px;background:#fff;padding:4px;box-shadow:0 0 15px rgba(16,185,129,.35)}
+.bt{font-size:19px;font-weight:900;letter-spacing:1px;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.bs{font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:4px}
+.links{display:flex;gap:6px;align-items:center}
+.links a,.links button{padding:9px 14px;border-radius:10px;font-size:13px;text-decoration:none;color:var(--muted);background:none;border:0;cursor:pointer;transition:.2s}
+.links a:hover,.links button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.links .back{border:1px solid var(--line);color:var(--acc)}
+
+.hero{max-width:900px;margin:auto;padding:80px 20px 30px;text-align:center}
+.pill{display:inline-block;padding:7px 14px;border:1px solid rgba(16,185,129,.4);background:rgba(16,185,129,.08);border-radius:100px;font-size:11px;color:var(--acc);font-weight:bold;letter-spacing:1px}
+.hero h1{margin-top:22px;font-size:clamp(32px,6vw,58px);line-height:1.05;font-weight:800;letter-spacing:-1px;color:#fff}
+.hero h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:620px;margin:18px auto 0;color:var(--muted);font-size:15px;line-height:1.7}
+.search{max-width:640px;margin:28px auto 0;position:relative}
+.search input{width:100%;padding:16px 18px 16px 48px;border-radius:14px;border:1px solid rgba(16,185,129,.35);background:rgba(10,14,14,.9);color:#fff;font-size:15px;outline:none;transition:.25s}
+.search input:focus{border-color:var(--acc);box-shadow:0 0 22px rgba(16,185,129,.18)}
+.search i{position:absolute;left:17px;top:50%;transform:translateY(-50%);font-style:normal;color:var(--acc);font-size:18px}
+
+.wrap{max-width:1200px;margin:auto;padding:0 20px}
+.sec{margin:60px 0}
+.st{font-size:25px;font-weight:800;color:#fff}
+.st::after{content:"";display:block;width:50px;height:3px;margin-top:9px;border-radius:3px;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+.sd{color:var(--muted);font-size:14px;margin:10px 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+
+.card{position:relative;padding:22px;border:1px solid var(--line);border-top:3px solid var(--k,var(--acc));border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(12,16,16,.7));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 8px 24px rgba(0,0,0,.25);transition:.25s;cursor:pointer}
+.card:hover{transform:translateY(-4px);border-color:var(--k,var(--acc));box-shadow:0 12px 34px rgba(0,0,0,.4),0 0 24px color-mix(in srgb,var(--k,var(--acc)),transparent 80%)}
+.card small{color:var(--k,var(--acc));font-size:11px;font-weight:bold;letter-spacing:1px}
+.card h3{margin-top:8px;font-size:19px;color:#fff}
+.card p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.5}
+.card.off{cursor:default;opacity:.65}.card.off:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.badge{display:inline-block;margin-top:12px;font-size:10px;font-weight:bold;letter-spacing:.8px;padding:5px 9px;border-radius:100px;background:rgba(255,255,255,.08);color:var(--muted)}
+.badge.live{background:rgba(0,255,157,.12);color:var(--green)}
+
+/* picks */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{padding:10px 16px;border-radius:100px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--text);font-size:13px;font-weight:bold;cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--acc);color:var(--acc)}
+.chip.on{border-color:var(--acc);color:var(--acc);background:rgba(16,185,129,.12)}
+.chip:disabled{opacity:.45;cursor:not-allowed}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.pbox{padding:22px;border:1px solid var(--line);border-top:3px solid var(--acc2);border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(12,16,16,.7))}
+.pbox.do{border-top-color:var(--acc)}
+.pbox h4{font-size:15px;color:#fff;margin-bottom:12px}
+.pbox li{list-style:none;position:relative;padding:8px 0 8px 22px;font-size:14px;color:#e4e4ee;line-height:1.5;border-bottom:1px solid rgba(255,255,255,.06)}
+.pbox li:last-child{border:0}
+.pbox li::before{content:"✦";position:absolute;left:0;color:var(--acc2)}
+.pbox.do li::before{color:var(--acc)}
+
+/* views */
+#view{display:none;max-width:1200px;margin:0 auto;padding:30px 20px}
+#view.on{display:block;animation:fi .3s ease}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}}
+.back-btn{padding:10px 15px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--acc);border-radius:10px;font-size:13px;cursor:pointer;margin-bottom:14px}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--muted);margin-bottom:14px}
+.crumbs a{color:var(--acc);cursor:pointer}.crumbs a:hover{text-decoration:underline}.crumbs b{color:#fff}.crumbs .s{opacity:.5}
+.vt{font-size:28px;font-weight:800;color:#fff}.vd{color:var(--muted);font-size:14px;margin:8px 0 20px}
+.prog{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);margin-bottom:18px;font-size:14px}
+.bar{height:8px;border-radius:8px;background:rgba(255,255,255,.08);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:width .6s}
+.sub{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:14px;background:rgba(255,255,255,.04);cursor:pointer;transition:.2s}
+.sub:hover{background:rgba(16,185,129,.07);transform:translateX(3px)}
+.sub small{color:var(--acc);font-size:11px;font-weight:bold}.sub span{display:block;margin-top:4px;font-size:15px;color:#fff}
+.sub.done{border-left-color:var(--green)}.sub.done span{color:var(--green)}
+.tick{flex:none;width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:none;color:transparent;font-size:15px;cursor:pointer}
+.sub.done .tick{background:var(--green);border-color:var(--green);color:#03180f}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;margin-bottom:12px}
+.tabs .chip{flex:none;white-space:nowrap}
+.res{padding:18px;border:1px solid var(--line);border-top:3px solid var(--acc2);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(12,16,16,.7))}
+.res small{font-size:11px;color:var(--acc2);font-weight:bold;letter-spacing:.5px}.res h3{margin-top:10px;font-size:16px;color:#fff}.res p{margin-top:6px;font-size:13px;color:var(--muted);line-height:1.5}
+.rb{display:inline-block;margin-top:14px;padding:12px 16px;border-radius:10px;background:linear-gradient(90deg,var(--acc),var(--acc2));color:#04110c;font-size:13px;font-weight:bold;text-decoration:none}
+.rb.soon{background:rgba(255,255,255,.07);color:var(--muted);pointer-events:none}
+.empty{grid-column:1/-1;padding:34px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+.donebtn{padding:11px 16px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#fff;font-size:13px;font-weight:bold;cursor:pointer;margin-bottom:14px}
+.donebtn.on{background:rgba(0,255,157,.12);border-color:var(--green);color:var(--green)}
+
+footer{margin-top:80px;padding:44px 20px;border-top:1px solid var(--line);text-align:center;background:rgba(0,0,0,.3)}
+.fl{width:100px;height:2px;margin:14px auto;background:linear-gradient(90deg,var(--acc),var(--acc2));border-radius:10px}
+footer p{color:var(--muted);font-size:13px;margin-top:6px}footer a{color:var(--acc);text-decoration:none}
+
+@media(max-width:700px){
+.links{display:none}.bs{font-size:8px;letter-spacing:1px}.bt{font-size:14px}.brand img{width:40px;height:40px}
+.hero{padding-top:55px}.sec{margin:45px 0}.st{font-size:21px}.vt{font-size:23px}
+.grid{grid-template-columns:1fr}.chip{padding:12px 16px}.back-btn{padding:12px 16px}
+.tick{width:36px;height:36px}.rb{padding:13px 18px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+ <div class="nav">
+  <a class="brand" href="#" onclick="home();return false;">
+   <img src="logo.png" alt="THOEDGE Logo">
+   <div><div class="bt">TEH-Thoyajaksh's Engineering Hub</div><div class="bs">• ENGINEERING • BRANCHES • THOEDGE PICKS •</div></div>
+  </a>
+  <nav class="links">
+   <button onclick="home('years-sec')">YEARS</button>
+   <button onclick="home('picks-sec')">PICKS</button>
+   <a class="back" id="backLink" href="YOUR_THOEDGE_LINK">← thoEdge</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero" id="top">
+ <span class="pill">ENGINEERING HUB • TEH</span>
+ <h1>Everything for your <span>engineering years</span></h1>
+ <p>Year-wise and branch-wise notes, syllabus, previous papers, lab manuals and thoEdge Picks on what to learn and do each year.</p>
+ <div class="search"><i>⌕</i><input id="q" type="text" placeholder="Search subjects, e.g. Data Structures, Physics..." oninput="doSearch()" autocomplete="off"></div>
+</section>
+
+<div class="wrap" id="homeSecs">
+ <section class="sec" id="search-sec" style="display:none">
+  <h2 class="st">Search results</h2><p class="sd">Matching subjects.</p>
+  <div class="grid" id="search-grid"></div>
+ </section>
+
+ <section class="sec" id="years-sec">
+  <h2 class="st">Choose your year</h2>
+  <p class="sd">First year is common for everyone. From second year, pick your branch.</p>
+  <div class="grid" id="year-grid"></div>
+ </section>
+
+ <section class="sec" id="picks-sec">
+  <h2 class="st">💎 thoEdge Picks</h2>
+  <p class="sd">What we suggest you learn and do, year by year and branch by branch.</p>
+  <div class="chips" id="pick-years"></div>
+  <div class="chips" id="pick-branches"></div>
+  <div class="picks" id="pick-out"></div>
+ </section>
+
+</div>
+
+<main id="view"></main>
+
+<footer>
+ <div class="bt" style="font-size:15px">TEH-Thoyajaksh's Engineering Hub</div>
+ <div class="fl"></div>
+ <p>Part of <a href="YOUR_THOEDGE_LINK" id="backLink3">thoEdge</a> • Founded by Matta Thoyajaksh</p>
+ <p>Copyright © 2026 • thoEdge Creations</p>
+ <p style="margin-top:12px"><a href="#" onclick="home();return false;">Back to top</a> &nbsp;•&nbsp; <a href="mailto:YOUR_EMAIL@example.com">Contact</a></p>
+</footer>
+
+<script>
+/* ======================= EDIT HERE ======================= */
+const THOEDGE_LINK="YOUR_THOEDGE_LINK";   /* link of the thoEdge main website */
+const L="YOUR_GOOGLE_DRIVE_LINK";          /* placeholder: replace with real links */
+
+/* Branches: "live" branches open their subjects. Others show Coming soon. */
+const branches=[
+ {id:"CSE",name:"Computer Science (CSE)",live:true},
+ {id:"ECE",name:"Electronics & Communication (ECE)",live:false},
+ {id:"EEE",name:"Electrical (EEE)",live:false},
+ {id:"MECH",name:"Mechanical",live:false},
+ {id:"CIVIL",name:"Civil",live:false}
+];
+
+/* Subjects (general list; edit to match your university) */
+const subjects={
+ "1|common":["Engineering Mathematics I","Engineering Mathematics II","Engineering Physics","Engineering Chemistry","Programming for Problem Solving","Basic Electrical Engineering","Basic Electronics","Engineering Graphics","Communication English"],
+ "2|CSE":["Data Structures","Discrete Mathematics","Digital Logic & Computer Organization","Object-Oriented Programming","Database Management Systems","Operating Systems"],
+ "3|CSE":["Design & Analysis of Algorithms","Computer Networks","Software Engineering","Theory of Computation","Compiler Design","Machine Learning"],
+ "4|CSE":["Cloud Computing","Cryptography & Network Security","Professional Elective","Open Elective","Project Work"]
+};
+
+/* Resource tabs inside every subject */
+const types=["Notes","Syllabus","University PYQs","Important Questions","Lab Manuals","Textbooks","Videos","Projects"];
+
+/* Add real resources here. Key format: "year|branch|subject|tab"  (branch is "common" for year 1)
+   resources["1|common|Engineering Physics|Notes"]=[{title:"Physics Notes",description:"Unit-wise notes",link:"DRIVE_LINK"}]; */
+const resources={};
+
+/* thoEdge Picks: draft suggestions, EDIT to your own advice.
+   "year" = for everyone in that year, "year|BRANCH" = extra for that branch. */
+const picks={
+ "1":{learn:["Programming basics in C or Python","Strong maths foundations","Note-making and time management"],do:["Explore all branches before you decide","Join one technical club","Build a daily study routine"]},
+ "2":{learn:["Data structures basics","Git and GitHub","Basics of web or app development"],do:["Build 2 small projects","Take part in a coding contest","Create your GitHub profile"]},
+ "3":{learn:["Advanced subject electives","Problem solving","One in-demand skill through a course"],do:["Apply for internships","Build one strong project","Join hackathons"]},
+ "4":{learn:["Interview preparation","Core subjects revision","The technology of your final-year project"],do:["Prepare resume and portfolio","Decide: job, GATE or higher studies","Apply for placements"]},
+ "2|CSE":{learn:["DSA in C++, Java or Python","DBMS and SQL","OOP concepts"],do:["Solve 100+ coding problems","Make a small database project"]},
+ "3|CSE":{learn:["Operating systems and networks in depth","System design basics","Machine learning basics"],do:["Build a full-stack project","Practice aptitude and coding tests"]},
+ "4|CSE":{learn:["Cloud and DevOps basics","Advanced DSA","Mock interviews"],do:["Contribute to open source","Polish your portfolio"]}
+};
+
+/* ========================================================= */
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ready=l=>l&&!l.startsWith("YOUR_")&&!l.startsWith("DRIVE_");
+const bk=(y,b)=>y===1?"common":b;
+["backLink","backLink3"].forEach(id=>{if(!ready(THOEDGE_LINK))return;$(id).href=THOEDGE_LINK});
+
+/* ---------- progress (saved in this browser) ---------- */
+const DK="teh_done";
+const dm=()=>{try{return JSON.parse(localStorage.getItem(DK))||{}}catch(e){return{}}};
+const sm=m=>{try{localStorage.setItem(DK,JSON.stringify(m))}catch(e){}};
+const key=(y,b,s)=>y+"|"+b+"|"+s;
+const isDone=(y,b,s)=>!!dm()[key(y,b,s)];
+function toggle(y,b,s){const m=dm(),k=key(y,b,s);if(m[k])delete m[k];else m[k]=1;sm(m)}
+
+/* ---------- home ---------- */
+const yearInfo=[["YEAR 1","Common first year","Subjects shared by every branch."],["YEAR 2","Second year","Pick your branch and go deeper."],["YEAR 3","Third year","Advanced subjects and electives."],["YEAR 4","Final year","Projects, electives and placements."]];
+const yc=["#10b981","#00d4ff","#6366f1","#eab308"];
+$("year-grid").innerHTML=yearInfo.map((y,i)=>`<div class="card" tabindex="0" style="--k:${yc[i]}" onclick="openYear(${i+1})" onkeydown="if(event.key==='Enter')openYear(${i+1})"><small>${y[0]}</small><h3>${y[1]}</h3><p>${y[2]}</p></div>`).join("");
+
+
+let py=1,pb="CSE";
+function renderPicks(){
+ $("pick-years").innerHTML=[1,2,3,4].map(y=>`<button class="chip ${y===py?"on":""}" onclick="py=${y};renderPicks()">Year ${y}</button>`).join("");
+ $("pick-branches").innerHTML=py===1?"":branches.map(b=>`<button class="chip ${b.id===pb?"on":""}" ${b.live?"":"disabled"} onclick="pb='${b.id}';renderPicks()">${esc(b.id)}${b.live?"":" · soon"}</button>`).join("");
+ $("pick-out").innerHTML=pickHTML(py,py===1?null:pb);
+}
+function pickHTML(y,b){
+ const g=picks[y]||{learn:[],do:[]},x=(b&&picks[y+"|"+b])||{learn:[],do:[]};
+ const li=a=>a.map(t=>`<li>${esc(t)}</li>`).join("");
+ return `<div class="pbox"><h4>📚 Learn${b?" ("+esc(b)+" focus)":""}</h4><ul>${li([...g.learn,...x.learn])}</ul></div><div class="pbox do"><h4>✅ Do${b?" ("+esc(b)+" focus)":""}</h4><ul>${li([...g.do,...x.do])}</ul></div>`;
+}
+renderPicks();
+
+/* ---------- navigation ---------- */
+const view=$("view"),homeSecs=$("homeSecs");
+function showView(html){view.innerHTML=html;view.classList.add("on");homeSecs.style.display="none";document.querySelector(".hero").style.display="none";scrollTo({top:0,behavior:"smooth"})}
+function home(id){
+ view.classList.remove("on");view.innerHTML="";homeSecs.style.display="";document.querySelector(".hero").style.display="";
+ if(id)setTimeout(()=>$(id).scrollIntoView({behavior:"smooth"}),50);else scrollTo({top:0,behavior:"smooth"});
+}
+function crumbs(parts){return `<div class="crumbs">${parts.map((p,i)=>(i?'<span class="s">›</span>':"")+(p.f?`<a onclick="${p.f}">${esc(p.l)}</a>`:`<b>${esc(p.l)}</b>`)).join("")}</div>`}
+const backTo=f=>`<button class="back-btn" onclick="${f}">← Back</button>`;
+
+function openYear(y){
+ if(y===1)return openList(1,null);
+ const cards=branches.map(b=>`<div class="card ${b.live?"":"off"}" style="--k:${yc[y-1]}" ${b.live?`tabindex="0" onclick="openList(${y},'${b.id}')"`:""}><small>BRANCH</small><h3>${esc(b.name)}</h3><span class="badge ${b.live?"live":""}">${b.live?"OPEN →":"COMING SOON"}</span></div>`).join("");
+ showView(`${backTo("home('years-sec')")}${crumbs([{l:"Home",f:"home()"},{l:"Year "+y}])}<h2 class="vt">Year ${y}: choose your branch</h2><p class="vd">Pick a branch to see its subjects.</p><div class="grid">${cards}</div><h2 class="st" style="margin-top:44px">💎 thoEdge Picks for Year ${y}</h2><p class="sd">General advice for every branch.</p><div class="picks">${pickHTML(y,null)}</div>`);
+}
+
+function openList(y,b){
+ const k=bk(y,b),list=subjects[y+"|"+k]||[],m=dm();
+ const d=list.filter(s=>m[key(y,k,s)]).length,p=list.length?Math.round(d/list.length*100):0;
+ const back=y===1?"home('years-sec')":`openYear(${y})`;
+ const cr=[{l:"Home",f:"home()"}];
+ if(y===1)cr.push({l:"Year 1 (Common)"});else{cr.push({l:"Year "+y,f:`openYear(${y})`});cr.push({l:b})}
+ showView(`${backTo(back)}${crumbs(cr)}<h2 class="vt">${y===1?"Year 1 • Common subjects":"Year "+y+" • "+esc(b)}</h2><p class="vd">Tap a subject. Tick it when you finish.</p>
+ <div class="prog" id="prog"><span id="pt">${d} of ${list.length} subjects done • ${p}%</span><div class="bar"><i id="pb2" style="width:${p}%"></i></div></div>
+ <div class="grid" id="sl"></div>
+ <h2 class="st" style="margin-top:44px">💎 thoEdge Picks${y===1?"":" • "+esc(b)}</h2><p class="sd">What we suggest you learn and do this year.</p><div class="picks">${pickHTML(y,y===1?null:b)}</div>`);
+ const box=$("sl");
+ if(!list.length)box.innerHTML='<div class="empty">Subjects coming soon.</div>';
+ list.forEach((s,i)=>{
+  const el=document.createElement("div");el.className="sub"+(isDone(y,k,s)?" done":"");el.tabIndex=0;
+  el.innerHTML=`<div><small>SUBJECT ${i+1}</small><span>${esc(s)}</span></div><button class="tick" aria-label="Mark done">✓</button>`;
+  el.onclick=()=>openSubject(y,b,s);
+  el.querySelector(".tick").onclick=e=>{e.stopPropagation();toggle(y,k,s);el.classList.toggle("done");const dd=list.filter(x=>dm()[key(y,k,x)]).length,pp=Math.round(dd/list.length*100);$("pt").textContent=dd+" of "+list.length+" subjects done • "+pp+"%";$("pb2").style.width=pp+"%"};
+  box.appendChild(el);
+ });
+}
+
+function openSubject(y,b,s){
+ const k=bk(y,b);
+ const cr=[{l:"Home",f:"home()"}];
+ if(y===1){cr.push({l:"Year 1",f:"openList(1,null)"})}else{cr.push({l:"Year "+y,f:`openYear(${y})`});cr.push({l:b,f:`openList(${y},'${b}')`})}
+ cr.push({l:s});
+ showView(`${backTo(y===1?"openList(1,null)":`openList(${y},'${b}')`)}${crumbs(cr)}<h2 class="vt">${esc(s)}</h2><p class="vd">Year ${y}${y===1?" • Common":" • "+esc(b)}</p><button class="donebtn" id="db"></button><div class="tabs" id="tb"></div><div class="grid" id="rs"></div>`);
+ const db=$("db"),paint=()=>{const on=isDone(y,k,s);db.classList.toggle("on",on);db.textContent=on?"✓ Subject completed":"Mark subject as done"};
+ db.onclick=()=>{toggle(y,k,s);paint()};paint();
+ const get=t=>resources[`${y}|${k}|${s}|${t}`]||[];
+ const show=t=>{
+  document.querySelectorAll("#tb .chip").forEach(c=>c.classList.toggle("on",c.dataset.t===t));
+  const box=$("rs"),a=get(t);box.innerHTML="";
+  if(!a.length){box.innerHTML=`<div class="empty">${esc(t)} for ${esc(s)} coming soon.</div>`;return}
+  a.forEach(r=>{const el=document.createElement("div");el.className="res";el.innerHTML=`<small>${esc(t).toUpperCase()}</small><h3>${esc(r.title)}</h3><p>${esc(r.description||"")}</p>${ready(r.link)?`<a class="rb" href="${esc(r.link)}" target="_blank" rel="noopener noreferrer">Open resource →</a>`:'<span class="rb soon">Coming Soon</span>'}`;box.appendChild(el)});
+ };
+ types.forEach(t=>{const c=document.createElement("button");c.className="chip";c.dataset.t=t;c.textContent=t+(get(t).length?" "+get(t).length:"");c.onclick=()=>show(t);$("tb").appendChild(c)});
+ show(types.find(t=>get(t).length)||types[0]);
+}
+
+/* ---------- search ---------- */
+function doSearch(){
+ const q=$("q").value.trim().toLowerCase(),sec=$("search-sec"),out=$("search-grid");
+ if(!q){sec.style.display="none";return}
+ out.innerHTML="";
+ Object.keys(subjects).forEach(k=>{const [y,b]=k.split("|");subjects[k].forEach(s=>{
+  if(s.toLowerCase().includes(q)){
+   const c=document.createElement("div");c.className="card";c.tabIndex=0;c.innerHTML=`<small>YEAR ${y} • ${b==="common"?"COMMON":esc(b)}</small><h3>${esc(s)}</h3><p>Open subject resources.</p>`;
+   c.onclick=()=>openSubject(+y,b==="common"?null:b,s);out.appendChild(c);
+  }})});
+ if(!out.children.length)out.innerHTML='<div class="empty">No matching subjects found.</div>';
+ sec.style.display="";
+}
+
+/* ---------- header hides while scrolled down ---------- */
+addEventListener("scroll",()=>{$("hd").classList.toggle("hidden",scrollY>=60)},{passive:true});
+</script>
+</body>
+</html>
